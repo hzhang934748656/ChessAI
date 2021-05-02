@@ -1,5 +1,33 @@
   
 import chess
+
+n = 1
+
+PawnBottomMatrix = [[3*n,3*n,3*n,4*n,4*n,3*n,3*n,3*n],[1*n,2*n,2*n,2*n,2*n,2*n,2*n,1*n],[1*n,2*n,2*n,2*n,2*n,2*n,2*n,1*n],[1*n,2*n,2*n,2*n,2*n,2*n,2*n,1*n],[1*n,2*n,2*n,2*n,2*n,2*n,2*n,1*n],[1*n,2*n,2*n,2*n,2*n,2*n,2*n,1*n],[0*n,1*n,1*n,1*n,1*n,1*n,1*n,0*n],[0*n,0*n,0*n,0*n,0*n,0*n,0*n,0*n]]
+
+PawnTopMatrix = [[0*n,0*n,0*n,0*n,0*n,0*n,0*n,0*n],[0*n,1*n,1*n,1*n,1*n,1*n,1*n,0*n],[1*n,2*n,2*n,2*n,2*n,2*n,2*n,1*n],[1*n,2*n,2*n,2*n,2*n,2*n,2*n,1*n],[1*n,2*n,2*n,2*n,2*n,2*n,2*n,1*n],[1*n,2*n,2*n,2*n,2*n,2*n,2*n,1*n],[1*n,2*n,2*n,2*n,2*n,2*n,2*n,1*n],[3*n,3*n,3*n,4*n,4*n,3*n,3*n,3*n]]
+
+RockButtomMatrix = [[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n],[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n],[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n],[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n],[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n],[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n],[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n],[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n]]
+
+RockTopMatrix = [[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n],[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n],[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n],[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n],[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n],[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n],[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n],[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n]]
+
+BishopButtomMatrix = [[0*n,1*n,2*n,2*n,2*n,2*n,1*n,0*n],[1*n,2*n,2*n,2*n,2*n,2*n,2*n,1*n],[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n],[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n],[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n],[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n],[1*n,2*n,2*n,2*n,2*n,2*n,2*n,1*n],[0*n,1*n,2*n,2*n,2*n,2*n,1*n,0*n]]
+
+BishopTopMatrix = [[0*n,1*n,2*n,2*n,2*n,2*n,1*n,0*n],[1*n,2*n,2*n,2*n,2*n,2*n,2*n,1*n],[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n],[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n],[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n],[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n],[1*n,2*n,2*n,2*n,2*n,2*n,2*n,1*n],[0*n,1*n,2*n,2*n,2*n,2*n,1*n,0*n]]
+
+KingButtomMatrix = [[-5*n,1*n,2*n,2*n,2*n,2*n,1*n,-5*n],[-1*n,2*n,2*n,2*n,2*n,2*n,2*n,-1*n],[0*n,2*n,2*n,2*n,2*n,2*n,2*n,0*n],[0*n,2*n,2*n,2*n,2*n,2*n,2*n,0*n],[0*n,2*n,2*n,2*n,2*n,2*n,2*n,0*n],[0*n,2*n,2*n,2*n,2*n,2*n,2*n,0*n],[-1*n,2*n,2*n,2*n,2*n,2*n,2*n,-1*n],[-5*n,1*n,2*n,2*n,2*n,2*n,1*n,-5*n]]
+
+KingTopMatrix = [[-5*n,1*n,2*n,2*n,2*n,2*n,1*n,-5*n],[-1*n,2*n,2*n,2*n,2*n,2*n,2*n,-1*n],[0*n,2*n,2*n,2*n,2*n,2*n,2*n,0*n],[0*n,2*n,2*n,2*n,2*n,2*n,2*n,0*n],[0*n,2*n,2*n,2*n,2*n,2*n,2*n,0*n],[0*n,2*n,2*n,2*n,2*n,2*n,2*n,0*n],[-1*n,2*n,2*n,2*n,2*n,2*n,2*n,-1*n],[-5*n,1*n,2*n,2*n,2*n,2*n,1*n,-5*n]]
+
+QueenButtomMatrix = [[0*n,1*n,1*n,1*n,1*n,1*n,1*n,0*n],[1*n,2*n,2*n,2*n,2*n,2*n,2*n,1*n],[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n],[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n],[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n],[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n],[1*n,2*n,2*n,2*n,2*n,2*n,2*n,1*n],[0*n,1*n,1*n,1*n,1*n,1*n,1*n,0*n]]
+
+QueenTopMatrix = [[0*n,1*n,1*n,1*n,1*n,1*n,1*n,0*n],[1*n,2*n,2*n,2*n,2*n,2*n,2*n,1*n],[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n],[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n],[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n],[1.5*n,2*n,2*n,2*n,2*n,2*n,2*n,1.5*n],[1*n,2*n,2*n,2*n,2*n,2*n,2*n,1*n],[0*n,1*n,1*n,1*n,1*n,1*n,1*n,0*n]]
+
+KnightButtomMatrix = [[-2*n,-1*n,0*n,0*n,0*n,0*n,-1*n,-2*n],[-1*n,0*n,1*n,1*n,1*n,1*n,0*n,-1*n],[0*n,1*n,2*n,2*n,2*n,2*n,1*n,0*n],[0*n,1*n,2*n,2*n,2*n,2*n,1*n,0*n],[0*n,1*n,2*n,2*n,2*n,2*n,1*n,0*n],[0*n,1*n,2*n,2*n,2*n,2*n,1*n,0*n],[-1*n,0*n,1*n,1*n,1*n,1*n,0*n,-1*n],[-2*n,-1*n,0*n,0*n,0*n,0*n,-1*n,-2*n]]
+
+KnightTopMatrix = [[-2*n,-1*n,0*n,0*n,0*n,0*n,-1*n,-2*n],[-1*n,0*n,1*n,1*n,1*n,1*n,0*n,-1*n],[0*n,1*n,2*n,2*n,2*n,2*n,1*n,0*n],[0*n,1*n,2*n,2*n,2*n,2*n,1*n,0*n],[0*n,1*n,2*n,2*n,2*n,2*n,1*n,0*n],[0*n,1*n,2*n,2*n,2*n,2*n,1*n,0*n],[-1*n,0*n,1*n,1*n,1*n,1*n,0*n,-1*n],[-2*n,-1*n,0*n,0*n,0*n,0*n,-1*n,-2*n]]
+
+
 def getaction(depth, board, is_max):
     possible_moves = board.legal_moves
     best_value = -float("inf")
@@ -51,27 +79,28 @@ def evaluation(board):
         piece = board.piece_at(i)
         if piece:
             role = bool(board.piece_at(i).color)
-            evaluation += (getPieceValue(str(board.piece_at(i))) if role else -getPieceValue(str(board.piece_at(i))))
+            x, y = i//8, i%8
+            evaluation += (getPieceValue(str(board.piece_at(i)),x,y) if role else -getPieceValue(str(board.piece_at(i)),x,y))
         i += 1
     return evaluation
 
 
-def getPieceValue(piece):
+def getPieceValue(piece, x, y):
     if(piece == None):
         return 0
     value = 0
     if piece == "P" or piece == "p":
-        value = 5
+        value = 5 + PawnBottomMatrix[x][y]
     if piece == "N" or piece == "n":
-        value = 10
+        value = 10 + KingButtomMatrix[x][y]
     if piece == "B" or piece == "b":
-        value = 20
+        value = 20 + BishopButtomMatrix[x][y]
     if piece == "R" or piece == "r":
-        value = 40
+        value = 40 + RockButtomMatrix[x][y]
     if piece == "Q" or piece == "q":
-        value = 100
+        value = 100 + QueenButtomMatrix[x][y]
     if piece == 'K' or piece == 'k':
-        value = 1000
+        value = 1000 + KingButtomMatrix[x][y]
     return value
 
 def main():
