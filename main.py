@@ -1,6 +1,7 @@
   
 import chess
-
+from chessboard import display
+from time import sleep
 p = 1
 
 PawnBottomMatrix = [[3*p,3*p,3*p,4*p,4*p,3*p,3*p,3*p],[1*p,2*p,2*p,2*p,2*p,2*p,2*p,1*p],[1*p,2*p,2*p,2*p,2*p,2*p,2*p,1*p],[1*p,2*p,2*p,2*p,2*p,2*p,2*p,1*p],[1*p,2*p,2*p,2*p,2*p,2*p,2*p,1*p],[1*p,2*p,2*p,2*p,2*p,2*p,2*p,1*p],[0*p,1*p,1*p,1*p,1*p,1*p,1*p,0*p],[0*p,0*p,0*p,0*p,0*p,0*p,0*p,0*p]]
@@ -107,6 +108,7 @@ def main():
     board = chess.Board()
     n = 0
     print(board)
+    display.start(board.fen())
     print(chess.Piece)
     while not board.is_game_over():
         if n%2 == 0:
@@ -122,8 +124,11 @@ def main():
             move = chess.Move.from_uci(str(move))
             board.push(move)
         print(board)
+        display.update(board.fen())
         n += 1
     print("Quit game successfully")
     print(board.outcome)
+    display.update(board.fen())
+
 if __name__ == "__main__":
     main()
