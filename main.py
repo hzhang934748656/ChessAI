@@ -104,6 +104,19 @@ def getPieceValue(piece, x, y):
         value = 1000 + KingButtomMatrix[x][y]
     return value
 
+#player a8b8 AI should go c5d7 Player go b8b7 AI should go d7f8 (take queen by fork)
+def test1():
+    return chess.Board("K4Q2/8/8/2n5/1b6/k7/8/8 w KQkq - 0 4")
+
+#player c7d5 AI should go b1e4 player a8b8 AI should go e4d5 (take the knight by pin)
+def test2():
+    return chess.Board("K7/2N5/8/8/3P4/8/8/kb6 w KQkq - 0 4")
+
+#player b1a1 AI should go c7c5 player go b4c2 AI should go c5d4 (take the bishop by fork)
+def test3():
+    return chess.Board("k1r5/ppp5/8/8/1N1B4/8/8/1K6 w KQkq - 0 4")
+
+
 def main():
     board = chess.Board()
     n = 0
@@ -116,6 +129,21 @@ def main():
             move = input("Please enter  a valid move or enter exit to quit: ")
             if move == "exit":
                 break
+            if move == "test1":
+                board = test1()
+                print(board)
+                display.update(board.fen())
+                continue
+            if move == "test2":
+                board = test2()
+                print(board)
+                display.update(board.fen())
+                continue
+            if move == "test3":
+                board = test3()
+                print(board)
+                display.update(board.fen())
+                continue
             move = chess.Move.from_uci(str(move))
             board.push(move)
         else:
@@ -132,3 +160,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
